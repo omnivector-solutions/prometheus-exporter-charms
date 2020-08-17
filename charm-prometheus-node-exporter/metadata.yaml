@@ -1,0 +1,33 @@
+name: prometheus-node-exporter
+summary: Prometheus node exporter.
+
+maintainers:
+    - OmniVector Solutions <admin@omnivector.solutions>
+description: |
+    Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors.
+
+tags:
+    - slurm
+    - hpc
+    - prometheus
+    - exporter
+
+series:
+    - focal
+    - bionic
+    - centos7
+
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container
+
+provides:
+  prometheus:
+    interface: prometheus
+
+resources:
+  prometheus-node-exporter:
+    type: file
+    filename: prometheus-node-exporter.snap
+    description: prometheus node exporter
