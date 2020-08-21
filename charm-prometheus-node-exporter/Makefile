@@ -14,7 +14,7 @@ pull-charm-from-edge: ## Push the charm to edge channel
 	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/charms/prometheus-node-exporter/prometheus-node-exporter.charm
 
 pull-snap-from-edge: ## Pull the classic slurm snap from s3
-	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/resources/prometheus-node-exporter/prometheus-node-exporter_1.0.1_amd64.snap -O prometheus-node-exporter.snap
+	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/snaps/prometheus-node-exporter/edge/prometheus-node-exporter_1.0.1_amd64.snap -O prometheus-node-exporter.snap
 
 # Display target comments in 'make help'
 help: 
