@@ -49,7 +49,8 @@ class PrometheusNodeExporterCharm(CharmBase):
                 prometheus_node_exporter_resource_path
             )
             self._stored.prometheus_node_exporter_installed = True
-            self.unit.status = ActiveStatus("Node exporter installed")
+            
+            self.unit.status = ActiveStatus("")
         else:
             self.unit.status = BlockedStatus(
                 "No prometheus-node-exporter snap resource found"
