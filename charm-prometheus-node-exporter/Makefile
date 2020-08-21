@@ -7,9 +7,14 @@ clean: ## Remove .tox and build dirs
 	rm -rf venv/
 	rm -rf build/
 
+push-charm-to-edge: ## Push the charm to edge channel
+	@aws s3 cp --acl public-read ./prometheus-node-exporter.charm s3://omnivector-public-assets/charms/prometheus-node-exporter
 
-pull-prometheus-node-exporter-snap: ## Pull the classic slurm snap from s3
-	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/resources/prometheus-node-exporter/prometheus-node-exporter_0.0.1_amd64.snap -O prometheus-node-exporter.snap
+pull-charm-from-edge: ## Push the charm to edge channel
+	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/charms/prometheus-node-exporter/prometheus-node-exporter.charm
+
+pull-snap-from-edge: ## Pull the classic slurm snap from s3
+	@wget https://omnivector-public-assets.s3-us-west-2.amazonaws.com/resources/prometheus-node-exporter/prometheus-node-exporter_1.0.1_amd64.snap -O prometheus-node-exporter.snap
 
 # Display target comments in 'make help'
 help: 
