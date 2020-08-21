@@ -17,6 +17,8 @@ series:
     - bionic
     - centos7
 
+subordinate: true
+
 requires:
   juju-info:
     interface: juju-info
