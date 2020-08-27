@@ -1,0 +1,34 @@
+name: prometheus-slurm-exporter
+summary: Prometheus collector and exporter for slurm.
+
+maintainers:
+    - OmniVector Solutions <admin@omnivector.solutions>
+description: |
+    Prometheus collector and exporter for metrics extracted from 
+    the Slurm resource scheduling system.
+
+tags:
+    - slurm
+    - hpc
+    - prometheus
+    - exporter
+
+series:
+    - focal
+    - bionic
+    - centos7
+
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container
+
+provides:
+  prometheus:
+    interface: prometheus
+
+resources:
+  prometheus-slurm-exporter:
+    type: file
+    filename: prometheus-slurm-exporter.snap
+    description: prometheus slurm exporter
