@@ -37,6 +37,7 @@ class PrometheusSlurmExporterCharm(CharmBase):
         self.framework.observe(self.on.install, self._on_install)
 
     def _on_install(self, event):
+        """Install the prometheus-slurm-exporter snap."""
         try:
             prometheus_slurm_exporter_resource_path = \
                 self.model.resources.fetch('prometheus-slurm-exporter')
@@ -49,7 +50,7 @@ class PrometheusSlurmExporterCharm(CharmBase):
                 prometheus_slurm_exporter_resource_path
             )
             self._stored.prometheus_node_exporter_installed = True
-            self.unit.status = ActiveStatus("Slurm exporter installed")
+            self.unit.status = ActiveStatus("")
         else:
             self.unit.status = BlockedStatus(
                 "No prometheus-slurm-exporter snap resource found"
